@@ -1,0 +1,44 @@
+{{log error}}
+<form class="form-horizontal" method="post" data-toggle="validator">
+    <fieldset>
+        <div class="form-group {{if errors.name "has-error"}}">
+            <label for="nev" class="col-lg-2 control-label">Tantárgy név</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="nev" name="nev" type="text" value="{{error.name}}">
+                <div class="help-block">{{errors.name}}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="kredit" class="col-lg-2 control-label">Kredit</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="kredit" name="kredit" type="text" value="{{error.credit}}">
+            </div>
+        </div>
+        
+        <div class="form-group {{if errors.description "has-error"}}">
+            <label for="leiras" class="col-lg-2 control-label">Leírás</label>
+            <div class="col-lg-10">
+                <textarea required class="form-control" rows="3" id="leiras" name="leiras">{{error.description}}</textarea>
+                <span class="help-block">A tantárgy rövid leírása.</span>
+                <div class="help-block">{{errors.description}}</div>
+            </div>
+        </div>
+        <div>
+            <label for="tanar" class="col-lg-2 control-label">Tanár</label>
+            <div class="col-lg-10">
+                <select id="valasztott" name="valasztott">
+                    {{#each teachers}}
+                     <option value={{id}}>{{fullName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <br/><br/><br/>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Clear</button>
+                <button {{action "submit"}} class="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>  

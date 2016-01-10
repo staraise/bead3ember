@@ -1,0 +1,37 @@
+{{log teacher}}
+<form class="form-horizontal" method="post" data-toggle="validator">
+    <fieldset>
+        <div class="form-group {{if errors.lastname "has-error"}}">
+            <label for="lastname" class="col-lg-2 control-label">Vezetéknév</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="lastname" name="lastname" type="text" value="{{teacher.lastname}}">
+                <div class="help-block">{{errors.lastname}}</div>
+            </div>
+        </div>
+        <div class="form-group {{if errors.firstname "has-error"}}">
+            <label for="firstname" class="col-lg-2 control-label">Keresztnév</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="firstname" name="firstname" type="text" value="{{teacher.firstname}}">
+                <div class="help-block">{{errors.firstname}}</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phonenumber" class="col-lg-2 control-label">Telefonszám</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="phonenumber" name="phonenumber" type="text" value="{{teacher.phonenumber}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="emailaddress" class="col-lg-2 control-label">Email cim</label>
+            <div class="col-lg-10">
+                <input required class="form-control" id="emailaddress" name="emailaddress" type="text" value="{{teacher.emailaddress}}">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Clear</button>
+                <button {{action "submit"}} class="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
