@@ -43,19 +43,13 @@ Publikus:
 ###Végpontok
 
 - GET /: főoldal
-- GET /subjects: bejelentkezes utani oldal
-- GET /teachers: bejelentkező oldal
-- POST /login: bejelentkezési adatok felküldése
-- GET /login/signup : regisztrációs oldal
-- POST /login/signup : regisztrációs adatok felküldése
-- GET /student/mysubjects: felvett tárgyak
-- GET /student/registrate: összes tantárgy listázása
-- POST /student/registrate: tantárgy jelentkezés
-- GET /teacher/all: összes tantárgy
-- POST /teacher/all: tantárgy szerkesztés törlés
-- GET /teacher/new: új tantárgy felvétele
-- POST /teacher/new: új tantárgy felküldése
-- GET /logout: kijelentkezes
+- GET /subjects/list: bejelentkezes utani oldal
+- GET /teachers/list: bejelentkező oldal
+- POST /subjects/list: új tantárgy létrehozása és meglévő törlése
+- POST /teachers/list: új tanár létrehozása és meglévő törlése
+- GET /subjects/:teacherid: tantárgyhoz tartozó tanár megtekintése
+- GET /teachers/:teacher_id: tanár szerkesztése
+- POST /teachers/:teacher_id: tanár új adatai elküldése a szerver felé
 
 ###Adatbázisterv
 
@@ -101,25 +95,7 @@ A felhasználó először meglátogatja a https://nodejs.org/en/#download oldalt
 Ezekután a https://github.com/staraise/beadando oldalról letölti a projektet. 
 ![Kép felirata](docs/images/hetedik.JPG)
 
-A letöltés után az adott zip-et ki kell tömöríteni egy erre alkalmas szoftverrel. Miután a nodejs telepítése befejeződött és a kitömörítés sikeres.
-
-Ezekután a kitömöritett mappába el kell navigálni parancssorból. Ezután fel kell telepíteni a megfelelő modulokat:
-Modulok:
- - bcryptjs
- - body-parser
- - connect-flash
- - express
- - express-session
- - express-validator
- - hbs
- - passport
- - passport-local
- - sails-disk
- - sails-memory
- - waterline
-Egy modult úgy lehet feltelepíteni hogy: npm install <modulnév>. Miután végeztünk az összes modul telepítésével akkor futtatjuk a szervert a node server.js parancssal. Ezekután az oldal elérhető a http://localhost:3000/ címen.
-
-###Program használata
+###Az oldal használata
 A programot mint diákok vagy tanárok is használhatják.
 Ha tanárként akarunk bejelentkezni akkor használjuk az admin felhasználó nevet admin jelszóval.
 Ha diákként akkor vagy regisztrálunk egy újat vagy pedig wtcscq/asd.
