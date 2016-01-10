@@ -27,6 +27,8 @@ A fenti ábrán látható egy folyamat. A felhasználó megérkezik a főoldalra
 
 ![Kép felirata](docs/images/harmadikkep.PNG)
 
+A fenti ábrán látható egy másik folyamat. A felhasználó megérkezik a főoldalra, majd átlép az összes tanár oldalára és ott szerkeszt egy tanárt.
+
 ##Tervezés
 
 ###Oldaltérkép
@@ -41,8 +43,8 @@ Publikus:
 ###Végpontok
 
 - GET /: főoldal
-- GET /welcome: bejelentkezes utani oldal
-- GET /login: bejelentkező oldal
+- GET /subjects: bejelentkezes utani oldal
+- GET /teachers: bejelentkező oldal
 - POST /login: bejelentkezési adatok felküldése
 - GET /login/signup : regisztrációs oldal
 - POST /login/signup : regisztrációs adatok felküldése
@@ -62,22 +64,19 @@ Publikus:
 A fenti kép ábrázolja az adatbázis tervet. Az adatbázis 2 táblából áll.
 - Subject
 - Teacher
-A usrelation tábla egy kapcsolótábla, erre azért volt szükség hogy egy user több tárgyat is feltudjon venni, viszont ezt a különböző diákok ne láthassák.
 
 A subject tábla tartalma:
 - id : Elsődleges kulcs.
-- date : Ebben a mezőben tárolom a dátumot amikor az adott tantárgy létre lett hozva
 - subjectname : A tantárgy neve.
 - description : Tantárgy leírása.
-- creditvalue : Tantárgy kreditértéke.
+- credit : Tantárgy kreditértéke.
 
-A user tábla tartalma:
+A teacher tábla tartalma:
 - id : Elsődleges kulcs.
-- neptun : A felhasználó neptun kódja.
-- password : A felhasználó jelszava.
-- surname : Vezetéknév.
-- forename : Keresztnév.
-- role : A felhasználó szerepe. Lehet tanár vagy diák.
+- firstname : A felhasználó keresztneve.
+- lastname: A felhasználó vezetékneve.
+- emailaddress : A felhasználó email címe.
+- phonenumber : A felhasználó telefonszáma.
 
 ##Tesztelés
 A teszteléshez a mocha, chai modulokat használtam. És ezek segitségével teszteltem.
@@ -91,7 +90,6 @@ majd pedig teszteltem hogyha olyan oldalra próbál a felhasználó menni ahova 
 És hogy itt sikeresen bejelentkezik-e a megadott paraméterekkel.
 
 ##Felhasználói dokumentáció
-Az oldal a https://wtcscqbeadando.herokuapp.com oldalon érhető el.
 
 ###A futtatáshoz ajánlott hardver-, szoftver konfiguráció
 A futtatáshoz ajánlott hardver: bármi amin elfut egy böngésző.
