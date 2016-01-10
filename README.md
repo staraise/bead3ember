@@ -73,6 +73,11 @@ A teacher tábla tartalma:
 - emailaddress : A felhasználó email címe.
 - phonenumber : A felhasználó telefonszáma.
 
+### Dinamikus működés
+![Kép felirata](docs/images/nyolcadik.PNG)
+
+A képen látható a tanár szerkesztésének a szekvenciadiagramja.
+
 ##Tesztelés
 A teszteléshez az ember.cli testerét használtam-
 A teszteseteket megtekinthetők a https://bead3-staraise.c9users.io/tests oldalon, miután a szervert elindítottuk.
@@ -90,8 +95,6 @@ A felhasználó meglátogatja a https://github.com/staraise/bead3ember oldalt é
 ![Kép felirata](docs/images/hetedik.PNG)
 
 A felhasználó meglátogatja a https://github.com/staraise/bead3restapi oldalt és onnan letölti a projektet. 
-
-![Kép felirata](docs/images/nyolcadik.PNG)
 
 Miután mindkét projektet letöltötte, cloud9-on külön workspace-t csinál mindkét projektnek majd a ide feltölti a két fájlt értelemszerűen.
 
